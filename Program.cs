@@ -80,15 +80,60 @@ class MyNewClass
    
         return numInArr;
     }
+     public static int MyTask35()
+     {
+        // Задайте одномерный массив из 123 случайных чисел.
+        // Найдите количество элементов массива, значения которых лежат в
+        // отрезке [10,99]. 
+        int[] MyArr = new int[123];
+        int count=0;
+        for (int i=0; i< MyArr.Length; i++)
+        {
+            MyArr[i] = new Random().Next(-900,1000);
+            if  ((MyArr[i] >= 10) && (MyArr[i] <= 99))   count++;
+        }
+        
+        Console.WriteLine(String.Join(" ", MyArr));
+        System.Console.WriteLine(count);
+        
+        return count;
+     }
+
+       public static void MyTask37()
+     {
+        // Найдите произведение пар чисел в одномерном массиве.
+        // Парой считаем первый и последний элемент, второй и предпоследний
+        // и т.д. Результат запишите в новом массиве
+        int[] MyArr = {2,4,5,3,6,8};
+      
+        // for (int i=0; i< MyArr.Length; i++)
+        // {
+        //     MyArr[i] = new Random().Next(-9,10);
+        // }
+        
+        //int[] NewArr = new int[MyArr.Length/2];
+       
+        Console.WriteLine(String.Join(" ", MyArr));
+        
+        int [] NewArr ;
+        int n = MyArr.Length;
+        
+        for (int i=0; i < MyArr.Length/2; i++)
+        {
+            NewArr[i] = MyArr[i]*MyArr[MyArr.Length-1-i]; 
+        } 
+        Console.WriteLine(String.Join(" ", NewArr));
+
+     }
     static void Main()
     {
        // MyTask32();
 
-        bool nInA=MyTask33();
-        // if (nInA) Console.WriteLine("Есть");
-        // else  Console.WriteLine("Нет");
+        // bool nInA=MyTask33();
+        // Console.WriteLine( nInA ? "Да" : "Нет");
 
-        Console.WriteLine( nInA ? "Да" : "Нет");
+       // int count=MyTask35();
+
     }
 
  
